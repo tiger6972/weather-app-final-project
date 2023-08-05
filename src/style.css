@@ -21,9 +21,15 @@ a {
   text-decoration: none;
 }
 
-a .extra-info {
+.extra-info {
   color: #6c7571;
 }
+
+a.gitHub {
+  color: #0077b6;
+  text-decoration: underline;
+}
+
 #description::first-letter {
   text-transform: capitalize;
 }
