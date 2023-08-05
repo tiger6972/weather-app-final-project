@@ -24,12 +24,18 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector(`#humidity`);
   let windElement = document.querySelector(`#wind-speed`);
   let dateElement = document.querySelector(`#currentDate`);
+  let iconElement = document.querySelector(`#icon`);
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.time);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
 let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
