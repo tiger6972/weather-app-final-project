@@ -16,7 +16,12 @@ h1 {
   padding-bottom: 30px;
 }
 
-.extra-info {
+a {
+  color: #212529;
+  text-decoration: none;
+}
+
+a .extra-info {
   color: #6c7571;
 }
 #description::first-letter {
@@ -61,4 +66,15 @@ h1 {
   color: #03045e;
   font-size: 26px;
   line-height: 1;
+}
+
+.unitToggle .active {
+  color: #0077b6;
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.unitToggle .active:hover {
+  text-decoration: none;
 }
