@@ -1,0 +1,40 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #212529;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.weather-app {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 50px;
+  border: 1px solid #00b4d8;
+  border-radius: 8px;
+  background: rgba(202, 240, 248, 0.25);
+}
+
+.city {
+  font-size: 72px;
+  color: #0077b6;
+}
+
+.today-temperature {
+  color: #03045e;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.extra-info {
+  color: #6c7571;
+}
+
+.unit-toggle {
+  color: #03045e;
+  margin-inline-start: 95px;
+}
