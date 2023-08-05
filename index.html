@@ -14,22 +14,27 @@
   </head>
   <body>
     <div class ="container">
-      <div class="weather-app">
-    <div class="row">
-      <div class="col-md-6">
+      <div class="weather-app-wrapper">
+        <div class =  "weather-app">
+              <div class="row">
+                      <div class="col-md-6">
+                        <div class="overview">
         <span class="city">Liverpool</span>
+      </div>
       </div>
       <div class="col-md-6">
       </br>
                <span class="unit-toggle">°C  | °F</span>
               </div>
             <div class="col-6">
+              <div class="d-flex weather-temperature">
           <img
           src="https://em-content.zobj.net/thumbs/240/google/350/cloud_2601-fe0f.png"
           alt="cloudy"
-          width = 40px
-        />
-      <span class = "today-temperature">16 °C</span>  
+          id = "icon"
+                  />
+      <strong id = "today-temperature">16</strong> <span class="units"> °C </span>
+      </div>
       </div>
       <div class="col-6">
         <div class="extra-info">
@@ -39,7 +44,7 @@
         <li>Wind: 10 km/h</li>
       </ul>
     </div>
-
+</div>
 
 
     <div class="col-6">
@@ -48,13 +53,15 @@
       <div class="col-6">
       <a href="click" class="btn btn-secondary"> My Location</a>
     </div>
-
+</div>
+</div>
+</br>
 <small>
   <a href="https://github.com/tiger6972/weather-app-final-project" target="_blank">Open source code
   </a> 
   by J Roche
 </small>
-
+</div>
 
     <script src="src/index.js"></script>
   </body>

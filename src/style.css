@@ -10,31 +10,52 @@ li {
   padding: 0;
 }
 
-.weather-app {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 50px;
-  border: 1px solid #00b4d8;
-  border-radius: 8px;
-  background: rgba(202, 240, 248, 0.25);
-}
-
 .city {
   font-size: 72px;
   color: #0077b6;
-}
-
-.today-temperature {
-  color: #03045e;
-  font-size: 40px;
-  font-weight: bolder;
+  padding-bottom: 60px;
 }
 
 .extra-info {
   color: #6c7571;
 }
 
+.overview {
+  margin-bottom: 20px;
+}
+
 .unit-toggle {
   color: #03045e;
   margin-inline-start: 95px;
+}
+
+.weather-app-wrapper {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  padding: 50px;
+  border: 1px solid #00b4d8;
+  border-radius: 8px;
+  background: rgba(202, 240, 248, 0.25);
+}
+
+.weather-temperature img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+}
+
+.weather-temperature strong {
+  color: #03045e;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: bolder;
+}
+
+.weather-temperature span {
+  color: #03045e;
+  font-size: 26px;
+  line-height: 1;
 }
