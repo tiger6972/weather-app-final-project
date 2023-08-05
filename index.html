@@ -9,8 +9,11 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
+  
+  
   </head>
   <body>
     <div class ="container">
@@ -19,7 +22,7 @@
               <div class="row">
                       <div class="col-md-6">
                         <div class="overview">
-        <span class="city">Liverpool</span>
+        <h1 id="city">City</h1>
       </div>
       </div>
       <div class="col-md-6">
@@ -39,9 +42,9 @@
       <div class="col-6">
         <div class="extra-info">
       <ul>
-        <li>Clear</li>
-        <li>Humidity: 50%</li>
-        <li>Wind: 10 km/h</li>
+        <li id = "description">Clear</li>
+        <li>Humidity: <span id = "humidity">50</span>%</li>
+        <li>Wind: <span id = "wind-speed">10 </span>km/h</li>
       </ul>
     </div>
 </div>

@@ -10,7 +10,7 @@ li {
   padding: 0;
 }
 
-.city {
+h1 {
   font-size: 72px;
   color: #0077b6;
   padding-bottom: 60px;
@@ -18,6 +18,9 @@ li {
 
 .extra-info {
   color: #6c7571;
+}
+#description::first-letter {
+  text-transform: capitalize;
 }
 
 .overview {
