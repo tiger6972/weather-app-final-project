@@ -22,6 +22,34 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div  class = "row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class = "col-2">
+  <div class = "forecast-date">${day}</div>
+<img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+          alt="cloudy"
+          id = "forecast-icon"
+          width="50"
+  />
+  <div class = "forecast-temperature">
+<span class = "forecast-max">18</span>  |  <span class="forecast-min">12</span>
+</div>
+</div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#today-temperature");
@@ -94,3 +122,4 @@ let celsiusLink = document.querySelector("#celsius-convert");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Frankfurt");
+displayForecast();
