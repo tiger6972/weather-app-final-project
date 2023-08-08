@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div  class = "row">`;
@@ -75,6 +76,14 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
+function getForecast(city) {
+  let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
+  let unit = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units${unit}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function search(city) {
   let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
   let unit = "metric";
@@ -122,4 +131,4 @@ let celsiusLink = document.querySelector("#celsius-convert");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Frankfurt");
-displayForecast();
+getForecast("Frankfurt");
