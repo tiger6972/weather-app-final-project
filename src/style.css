@@ -52,7 +52,7 @@ a.gitHub {
   padding: 50px;
   border: 1px solid #00b4d8;
   border-radius: 8px;
-  background: rgba(202, 240, 248, 0.25);
+  background: rgba(202, 240, 248, 0.3);
 }
 
 .weather-temperature img {
@@ -83,4 +83,26 @@ a.gitHub {
 
 .unitToggle .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-date {
+  color: #0077b6;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.forecast-max {
+  color: #03045e;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.forecast-min {
+  color: #00b4d8;
+  font-size: 16px;
 }
