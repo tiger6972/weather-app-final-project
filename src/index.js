@@ -33,15 +33,15 @@ function displayForecast(response) {
       forecastHTML +
       `
 <div class = "col-2">
-  <div class = "forecast-date">${forecastDay}</div> 
+  <div class = "forecast-date">${forecastDay.time}</div> 
 <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.daily[0].condition.icon}.png"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
           alt="cloudy"
           id = "forecast-icon"
           width="50"
   />
   <div class = "forecast-temperature">
-<span class = "forecast-max">${forecastDay.daily.temperature.maximum}°C</span>  |  <span class="forecast-min">${forecastDay.daily.temperature.minimum}°C</span>
+<span class = "forecast-max">${forecastDay.temperature.maximum}°C</span>  |  <span class="forecast-min">${forecastDay.temperature.minimum}°C</span>
 </div>
 </div>
 `;
