@@ -40,7 +40,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div  class = "row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5)
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -50,7 +50,7 @@ function displayForecast(response) {
           src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
             forecastDay.condition.icon
           }.png"
-          alt="cloudy"
+          alt=${forecastDay.icon}
           id = "forecast-icon"
           width="50"
   />
@@ -63,10 +63,19 @@ function displayForecast(response) {
 </div>
 </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(city) {
+  console.log(city);
+  let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
+  let unit = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units${unit}`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -94,14 +103,6 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-function getForecast(city) {
-  let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
-  let unit = "metric";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units${unit}`;
-
-  axios.get(apiUrl).then(displayForecast);
-}
-
 function search(city) {
   let apiKey = "05d7e4b8cc452aecc8t7e30oc08edef4";
   let unit = "metric";
@@ -110,14 +111,14 @@ function search(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 function handleSubmit(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   search(searchInputElement.value);
+  getForecast(searchInputElement.value);
 }
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 search("Frankfurt");
 getForecast("Frankfurt");
