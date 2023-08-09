@@ -79,6 +79,8 @@ function displayTemperature(response) {
   let dateElement = document.querySelector(`#currentDate`);
   let iconElement = document.querySelector(`#icon`);
 
+  celsiusTemperature = response.data.temperature.current;
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
@@ -107,9 +109,6 @@ function search(city) {
 
   axios.get(apiUrl).then(displayTemperature);
 }
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
