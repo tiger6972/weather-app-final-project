@@ -116,37 +116,5 @@ function handleSubmit(event) {
   search(searchInputElement.value);
 }
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#today-temperature");
-  let changeUnitElement = document.querySelector("#units");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  changeUnitElement.innerHTML = `°F`;
-}
-
-function displayCelsius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let temperatureElement = document.querySelector("#today-temperature");
-  let changeUnitElement = document.querySelector("#units");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  changeUnitElement.innerHTML = `°C`;
-}
-
-let celsiusTemperature = null;
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-convert");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-convert");
-celsiusLink.addEventListener("click", displayCelsius);
-
 search("Frankfurt");
 getForecast("Frankfurt");

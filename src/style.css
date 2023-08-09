@@ -74,9 +74,9 @@ a.gitHub {
   line-height: 1;
 }
 
-.unitToggle .active {
+.active {
   color: #0077b6;
-  cursor: default;
+  cursor: default;x
   text-decoration: none;
   font-weight: bold;
 }
