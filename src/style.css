@@ -45,6 +45,7 @@ a.gitHub {
 
 .weather-app-wrapper {
   max-width: 800px;
+  align-content: center;
   margin: 30px auto;
 }
 
